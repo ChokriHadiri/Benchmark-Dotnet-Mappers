@@ -13,5 +13,12 @@ namespace BenchmarkMappers.Providers
             filler.Setup();
             return filler.Create(customersCount).ToList();
         }
+
+        public static List<CityDto> GetAddresses(int citiesCount)
+        {
+            Filler<CityDto> filler = new Filler<CityDto>();
+            filler.Setup();
+            return filler.Create(citiesCount).ToList();
+        }
     }
 }

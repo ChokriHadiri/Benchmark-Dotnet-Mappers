@@ -182,5 +182,21 @@ namespace BenchmarkMappers.Mappers
                 HomePage = dto.HomePage,
             };
         }
+
+        public static List<City> MapTo(this IEnumerable<CityDto> dto)
+        {
+            return dto.Select(MapTo).ToList();
+        }
+
+        public static City MapTo(this CityDto dto)
+        {
+            return new()
+            {
+                CityID = dto.CityID,
+                Name = dto.Name,
+                Region = dto.Region,
+                Country = dto.Country
+            };
+        }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Order;
 using BenchmarkMappers.Dto;
 using BenchmarkMappers.Entities;
@@ -10,7 +9,6 @@ using Nelibur.ObjectMapper;
 
 namespace BenchmarkMappers
 {
-    [SimpleJob(RuntimeMoniker.CoreRt50)]
     [ThreadingDiagnoser]
     [MemoryDiagnoser]
     [Orderer(SummaryOrderPolicy.FastestToSlowest)]
@@ -19,7 +17,7 @@ namespace BenchmarkMappers
     public class BenchmarkRunnerOnSingleObject
     {
         private CustomerDto _customerDto;
-     
+        
         public BenchmarkRunnerOnSingleObject()
         {
             AutoMapperConfigurator.SetUp();

@@ -23,6 +23,8 @@ namespace BenchmarkMappers.Mappers
                 cfg.CreateMap<CustomerDemographicDto, CustomerDemographic>();
                 cfg.CreateMap<TerritoryDto, Territory>();
                 cfg.CreateMap<RegionDto, Region>();
+
+                cfg.CreateMap<CityDto, City>();
             }).CreateMapper();
         }
     }

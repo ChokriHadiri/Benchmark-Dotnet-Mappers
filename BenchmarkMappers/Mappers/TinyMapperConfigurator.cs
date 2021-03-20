@@ -19,8 +19,11 @@ namespace BenchmarkMappers.Mappers
             TinyMapper.Bind<SupplierDto, Supplier>();
             TinyMapper.Bind<CustomerDemographicDto, CustomerDemographic>();
             TinyMapper.Bind<TerritoryDto, Territory>();
-            TinyMapper.Bind<RegionDto, Region>();
+            TinyMapper.Bind<RegionDto, Region>(); 
             TinyMapper.Bind<List<CustomerDto>, List<Customer>>();
+
+            TinyMapper.Bind<CityDto, City>();
+            TinyMapper.Bind<List<CityDto>, List<City>>();
         }
     }
 }

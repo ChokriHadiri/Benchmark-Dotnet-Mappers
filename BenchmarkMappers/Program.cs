@@ -1,5 +1,4 @@
-﻿using System;
-using BenchmarkDotNet.Running;
+﻿using BenchmarkDotNet.Running;
 
 namespace BenchmarkMappers
 {
@@ -7,8 +6,7 @@ namespace BenchmarkMappers
     {
         private static void Main()
         {
-            BenchmarkRunner.Run<BenchmarkRunnerOnList>();
-            Console.ReadLine();
+            BenchmarkRunner.Run<BenchmarkRunnerOnSampleList>();
         }
     }
 }

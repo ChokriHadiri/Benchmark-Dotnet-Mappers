@@ -4,11 +4,12 @@
 
 When we read/write data, we need to move our information from one layer to the next. We need to map one or several columns to a new set of columns. As our application grows, we get more and more of these objects. So it become boring, time-consuming process and harder to maintain.
 
-The use of automated object mappers tools like (*Mapster, AutoMapper, ...*) can help us preserve the best practice of clean code, non-complex code, and organized code.
+The use of automated object mappers tools like (***Mapster, AutoMapper, ...***) can help us preserve the best practice of clean code, non-complex code, and organized code.
 
-This benefit comes with a cost. Improving code quality while maintaining a good performance/RAM memory allocation is probably one of the hardest parts of developing software, but it’s what makes our product valuable.
+This benefit comes with a cost. Improving code quality while maintaining a good performance/RAM memory allocation is probably one of the hardest parts of developing software, but it's what makes our product valuable.
 
 In our case, we are going to use **benchmarks** to compare the performance of manual mapping versus the performance of using object mappers. Based on those benchmarks, we can make the appropriate decision.
+
 
 ## Mappers
 
@@ -67,9 +68,15 @@ dotnet run -p BenchmarkMappers.csproj -c Release
 After that, we can check out the markdown results.
 
 ## Results
-All use cases are going to be tested with 1, 10, 100, 1.000 records and we have used [ObjectFiller](http://objectfiller.net/) to fill our records with random data.
+All use cases are going to be tested with 1, 10, 100, 1.000,  10000, 1000000 records and we have used [ObjectFiller](http://objectfiller.net/) to fill our records with random data.
 
+For **Sample object** (CityDto)
+![](https://raw.githubusercontent.com/ChokriHadiri/Benchmark-Dotnet-Mappers/master/BenchmarkSampleResults.PNG)
+
+For **Complex object** (CustomerDto)
 ![](https://raw.githubusercontent.com/ChokriHadiri/Benchmark-Dotnet-Mappers/master/BenchmarkResults.PNG)
+
+
 
 ## Points to Note
 Let’s take a close look at these benchmark results.

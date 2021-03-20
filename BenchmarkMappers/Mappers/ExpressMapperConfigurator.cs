@@ -18,6 +18,8 @@ namespace BenchmarkMappers.Mappers
             ExpressMapper.Mapper.Register<CustomerDemographicDto, CustomerDemographic>();
             ExpressMapper.Mapper.Register<TerritoryDto, Territory>();
             ExpressMapper.Mapper.Register<RegionDto, Region>();
+            
+            ExpressMapper.Mapper.Register<CityDto, City>();
         }
     }
 }

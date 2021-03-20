@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Order;
 using BenchmarkMappers.Dto;
 using BenchmarkMappers.Entities;
@@ -13,20 +12,19 @@ using Nelibur.ObjectMapper;
 // ReSharper disable once UnassignedField.Global
 namespace BenchmarkMappers
 {
-    [SimpleJob(RuntimeMoniker.CoreRt50)]
     [ThreadingDiagnoser]
     [MemoryDiagnoser]
     [Orderer(SummaryOrderPolicy.FastestToSlowest)]
     [RankColumn]
     [MarkdownExporter, HtmlExporter, CsvExporter, RPlotExporter]
-    public class BenchmarkRunnerOnList
+    public class BenchmarkRunnerOnComplexList
     {
-        [Params(1, 10, 100, 1000, 5000)]
+        [Params(1, 10, 100, 1000, 10000)]
         public int CustomersCount;
 
         private List<CustomerDto> _customerDtos;
 
-        public BenchmarkRunnerOnList()
+        public BenchmarkRunnerOnComplexList()
         {
             AutoMapperConfigurator.SetUp();
             ExpressMapperConfigurator.SetUp();
