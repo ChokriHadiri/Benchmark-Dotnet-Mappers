@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>BenchmarkMappers.BenchmarkRunnerOnList-20210320-145407</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.12.1, OS=Windows 10.0.19041.867 (2004/?/20H1)
+Intel Core i7-4700HQ CPU 2.40GHz (Haswell), 1 CPU, 8 logical and 4 physical cores
+.NET Core SDK=5.0.104
+  [Host]     : .NET Core 5.0.4 (CoreCLR 5.0.421.11614, CoreFX 5.0.421.11614), X64 RyuJIT
+  DefaultJob : .NET Core 5.0.4 (CoreCLR 5.0.421.11614, CoreFX 5.0.421.11614), X64 RyuJIT
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>        Method</th><th>CustomersCount</th><th>     Mean</th><th>  Error</th><th> StdDev</th><th>Ratio</th><th>RatioSD</th><th>Rank</th><th>Gen 0</th><th>Gen 1</th><th>Gen 2</th><th>Allocated</th><th>Completed Work Items</th><th>Lock Contentions</th>
+</tr>
+</thead><tbody><tr><td>MapWithMapster</td><td>1</td><td>18.22 &mu;s</td><td>0.379 &mu;s</td><td>1.117 &mu;s</td><td>0.51</td><td>0.04</td><td>1</td><td>17.8833</td><td>-</td><td>-</td><td>54.8 KB</td><td>0.0001</td><td>-</td>
+</tr><tr><td>MapWithAgileMapper</td><td>1</td><td>28.68 &mu;s</td><td>1.834 &mu;s</td><td>5.172 &mu;s</td><td>0.78</td><td>0.14</td><td>2</td><td>-</td><td>-</td><td>-</td><td>16.54 KB</td><td>-</td><td>-</td>
+</tr><tr><td>MapWithManualMapping</td><td>1</td><td>36.01 &mu;s</td><td>0.702 &mu;s</td><td>1.434 &mu;s</td><td>1.00</td><td>0.00</td><td>3</td><td>27.2217</td><td>8.9111</td><td>-</td><td>84.3 KB</td><td>0.0001</td><td>-</td>
+</tr><tr><td>MapWithAutoMapper</td><td>1</td><td>99.18 &mu;s</td><td>1.982 &mu;s</td><td>2.713 &mu;s</td><td>2.71</td><td>0.14</td><td>4</td><td>23.5596</td><td>-</td><td>-</td><td>72.49 KB</td><td>0.0002</td><td>-</td>
+</tr><tr><td>MapWithExpressMapper</td><td>1</td><td>215.55 &mu;s</td><td>4.235 &mu;s</td><td>8.555 &mu;s</td><td>5.99</td><td>0.38</td><td>5</td><td>53.2227</td><td>25.8789</td><td>-</td><td>260.2 KB</td><td>0.0005</td><td>-</td>
+</tr><tr><td>MapWithTinyMapper</td><td>1</td><td>383.21 &mu;s</td><td>7.582 &mu;s</td><td>16.643 &mu;s</td><td>10.64</td><td>0.54</td><td>6</td><td>58.1055</td><td>19.0430</td><td>-</td><td>238.73 KB</td><td>0.0010</td><td>-</td>
+</tr><tr><td>MapWithMapster</td><td>10</td><td>443.91 &mu;s</td><td>6.903 &mu;s</td><td>6.119 &mu;s</td><td>0.63</td><td>0.01</td><td>1</td><td>127.4414</td><td>63.4766</td><td>-</td><td>780.73 KB</td><td>0.0010</td><td>-</td>
+</tr><tr><td>MapWithAgileMapper</td><td>10</td><td>469.91 &mu;s</td><td>9.306 &mu;s</td><td>22.652 &mu;s</td><td>0.67</td><td>0.04</td><td>2</td><td>101.5625</td><td>50.7813</td><td>-</td><td>623.09 KB</td><td>0.0010</td><td>-</td>
+</tr><tr><td>MapWithManualMapping</td><td>10</td><td>698.47 &mu;s</td><td>10.972 &mu;s</td><td>8.566 &mu;s</td><td>1.00</td><td>0.00</td><td>3</td><td>158.2031</td><td>79.1016</td><td>-</td><td>969.82 KB</td><td>0.0020</td><td>-</td>
+</tr><tr><td>MapWithExpressMapper</td><td>10</td><td>1,260.28 &mu;s</td><td>24.980 &mu;s</td><td>33.347 &mu;s</td><td>1.82</td><td>0.05</td><td>4</td><td>191.4063</td><td>95.7031</td><td>-</td><td>1172.55 KB</td><td>0.0039</td><td>-</td>
+</tr><tr><td>MapWithAutoMapper</td><td>10</td><td>1,724.00 &mu;s</td><td>34.379 &mu;s</td><td>75.463 &mu;s</td><td>2.41</td><td>0.11</td><td>5</td><td>152.3438</td><td>76.1719</td><td>-</td><td>930.97 KB</td><td>0.0039</td><td>-</td>
+</tr><tr><td>MapWithTinyMapper</td><td>10</td><td>3,425.79 &mu;s</td><td>67.883 &mu;s</td><td>144.663 &mu;s</td><td>4.95</td><td>0.24</td><td>6</td><td>281.2500</td><td>140.6250</td><td>-</td><td>1731.44 KB</td><td>0.0078</td><td>-</td>
+</tr><tr><td>MapWithMapster</td><td>100</td><td>16,907.06 &mu;s</td><td>337.846 &mu;s</td><td>439.295 &mu;s</td><td>0.74</td><td>0.03</td><td>1</td><td>1375.0000</td><td>562.5000</td><td>156.2500</td><td>7448.1 KB</td><td>0.0625</td><td>-</td>
+</tr><tr><td>MapWithManualMapping</td><td>100</td><td>22,742.50 &mu;s</td><td>448.545 &mu;s</td><td>1,003.235 &mu;s</td><td>1.00</td><td>0.00</td><td>2</td><td>1562.5000</td><td>656.2500</td><td>187.5000</td><td>8434.32 KB</td><td>0.0625</td><td>-</td>
+</tr><tr><td>MapWithAgileMapper</td><td>100</td><td>24,839.35 &mu;s</td><td>341.843 &mu;s</td><td>285.455 &mu;s</td><td>1.05</td><td>0.03</td><td>3</td><td>1656.2500</td><td>687.5000</td><td>187.5000</td><td>9011.71 KB</td><td>0.0625</td><td>-</td>
+</tr><tr><td>MapWithAutoMapper</td><td>100</td><td>32,357.74 &mu;s</td><td>630.562 &mu;s</td><td>1,650.072 &mu;s</td><td>1.44</td><td>0.09</td><td>4</td><td>1562.5000</td><td>656.2500</td><td>187.5000</td><td>8490.65 KB</td><td>0.0625</td><td>-</td>
+</tr><tr><td>MapWithExpressMapper</td><td>100</td><td>35,689.33 &mu;s</td><td>710.686 &mu;s</td><td>846.022 &mu;s</td><td>1.55</td><td>0.07</td><td>5</td><td>2142.8571</td><td>857.1429</td><td>214.2857</td><td>11970.56 KB</td><td>0.1429</td><td>-</td>
+</tr><tr><td>MapWithTinyMapper</td><td>100</td><td>47,996.60 &mu;s</td><td>948.492 &mu;s</td><td>1,298.306 &mu;s</td><td>2.10</td><td>0.12</td><td>6</td><td>2454.5455</td><td>909.0909</td><td>181.8182</td><td>13882.18 KB</td><td>0.1818</td><td>-</td>
+</tr><tr><td>MapWithManualMapping</td><td>1000</td><td>227,108.69 &mu;s</td><td>4,503.014 &mu;s</td><td>8,119.862 &mu;s</td><td>1.00</td><td>0.00</td><td>1</td><td>13333.3333</td><td>4333.3333</td><td>-</td><td>81869.42 KB</td><td>1.0000</td><td>-</td>
+</tr><tr><td>MapWithAgileMapper</td><td>1000</td><td>231,308.55 &mu;s</td><td>6,122.542 &mu;s</td><td>17,762.606 &mu;s</td><td>1.01</td><td>0.09</td><td>1</td><td>14000.0000</td><td>5000.0000</td><td>-</td><td>86380.41 KB</td><td>3.0000</td><td>-</td>
+</tr><tr><td>MapWithAutoMapper</td><td>1000</td><td>241,213.06 &mu;s</td><td>5,733.373 &mu;s</td><td>16,904.981 &mu;s</td><td>1.08</td><td>0.09</td><td>2</td><td>13000.0000</td><td>4000.0000</td><td>-</td><td>80040.34 KB</td><td>3.0000</td><td>-</td>
+</tr><tr><td>MapWithMapster</td><td>1000</td><td>243,726.87 &mu;s</td><td>3,502.313 &mu;s</td><td>3,104.709 &mu;s</td><td>1.09</td><td>0.04</td><td>2</td><td>12750.0000</td><td>4500.0000</td><td>250.0000</td><td>76546.07 KB</td><td>0.7500</td><td>-</td>
+</tr><tr><td>MapWithExpressMapper</td><td>1000</td><td>343,203.19 &mu;s</td><td>6,702.853 &mu;s</td><td>15,799.412 &mu;s</td><td>1.53</td><td>0.11</td><td>3</td><td>19000.0000</td><td>6000.0000</td><td>-</td><td>116856.67 KB</td><td>3.0000</td><td>-</td>
+</tr><tr><td>MapWithTinyMapper</td><td>1000</td><td>441,387.90 &mu;s</td><td>8,008.066 &mu;s</td><td>7,864.991 &mu;s</td><td>1.95</td><td>0.08</td><td>4</td><td>22000.0000</td><td>7000.0000</td><td>-</td><td>134498.32 KB</td><td>3.0000</td><td>-</td>
+</tr><tr><td>MapWithMapster</td><td>5000</td><td>919,865.28 &mu;s</td><td>18,636.363 &mu;s</td><td>52,258.359 &mu;s</td><td>0.88</td><td>0.07</td><td>1</td><td>65000.0000</td><td>22000.0000</td><td>-</td><td>396969.99 KB</td><td>3.0000</td><td>-</td>
+</tr><tr><td>MapWithManualMapping</td><td>5000</td><td>1,042,796.25 &mu;s</td><td>20,585.571 &mu;s</td><td>50,882.430 &mu;s</td><td>1.00</td><td>0.00</td><td>2</td><td>68000.0000</td><td>23000.0000</td><td>-</td><td>414357.07 KB</td><td>3.0000</td><td>-</td>
+</tr><tr><td>MapWithAgileMapper</td><td>5000</td><td>1,218,044.00 &mu;s</td><td>24,075.465 &mu;s</td><td>57,683.276 &mu;s</td><td>1.17</td><td>0.08</td><td>3</td><td>69000.0000</td><td>23000.0000</td><td>-</td><td>424018.48 KB</td><td>3.0000</td><td>-</td>
+</tr><tr><td>MapWithAutoMapper</td><td>5000</td><td>1,482,704.49 &mu;s</td><td>29,103.582 &mu;s</td><td>58,790.672 &mu;s</td><td>1.42</td><td>0.09</td><td>4</td><td>67000.0000</td><td>22000.0000</td><td>-</td><td>410440.9 KB</td><td>3.0000</td><td>-</td>
+</tr><tr><td>MapWithExpressMapper</td><td>5000</td><td>1,703,805.32 &mu;s</td><td>33,863.649 &mu;s</td><td>77,124.664 &mu;s</td><td>1.63</td><td>0.10</td><td>5</td><td>96000.0000</td><td>33000.0000</td><td>-</td><td>585714 KB</td><td>3.0000</td><td>-</td>
+</tr><tr><td>MapWithTinyMapper</td><td>5000</td><td>2,289,378.72 &mu;s</td><td>45,091.275 &mu;s</td><td>67,490.497 &mu;s</td><td>2.16</td><td>0.12</td><td>6</td><td>114000.0000</td><td>38000.0000</td><td>-</td><td>697537.63 KB</td><td>3.0000</td><td>-</td>
+</tr></tbody></table>
+</body>
+</html>
